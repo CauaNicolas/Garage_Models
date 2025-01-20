@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html {
+            font-size: 65%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar {
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        html::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 5rem;
+        }
+        body {
+            background-color: black;
+        }
+        .header {
+            height: 50px;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            padding: 1.5rem 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: #bb0000;
+            /*position: fixed;*/
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .logo {
+            height: 19rem;
+        }
+        .header .navbar a{
+            color: #fff;
+            font-size: 1.6rem;
+            margin: 0 1rem;
+        }
+        .header .navbar a:hover {
+            color: red;
+            border-bottom: red;
+            padding-bottom: .5rem;
+        }
+        .header .icons div {
+            color: white;
+            cursor: pointer;
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+        .header .icons div:hover {
+            color: red;
+        }
+        /*.header .search-form {
+            position: absolute;
+            top: 115%; right: 7%;
+            background: white;
+            width: 50rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            transform: scale(Y);
+            transform-origin: top;
+        }
+        .header .search-form input {
+            height: 100%;
+            width: 100%;
+            font-size: 1.6rem;
+            color: black;
+            padding: 1rem;
+            text-transform: none;
+        }
+        .header .search-form label {
+            cursor: pointer;
+            font-size: 2.2rem;
+            margin-left: 1.5rem;
+            color: black;
+        }
+        .header .search-form label:hover {
+            color: red;
+        }*/
+
+
+
+        .containers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 90px;
+            background: linear-gradient(to bottom, #000000, #5c5c5c, black);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .image-section img {
+            max-width: 400px;
+            border-radius: 8px;
+        }
+        .text-section {
+            max-width: 500px;
+            color: white;
+            text-align: center;
+          }
+          
+          .text-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            line-height: 1.2;
+          }
+          
+          .text-section .highlight {
+            color: #d32f2f;
+            align-items: center;
+          }
+          
+          .text-section p {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            max-width: 400px;
+          }
+          
+          .text-section .button {
+            text-decoration: none;
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+          }
+          
+          .text-section .button:hover {
+            background-color: #b71c1c;
+          }
+
+
+
+        .conteudo {
+            max-width: auto;
+            margin: 20px auto;
+            text-align: center;
+            background: #000000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .subtitulo {
+            font-size: x-large;
+            font-weight: 600;
+            color: white;
+            padding: 10px;
+        }
+        .escala {
+            color: rgb(201, 201, 201);
+            padding-bottom: 40px;
+            font-size: larger;
+        }
+        .item-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .item h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: gray;
+            cursor: pointer;
+        }
+        .item h1 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        .item button {
+            background: red;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item button:hover {
+            background: rgb(168, 0, 0);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+        }
