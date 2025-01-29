@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/style_login.css">
+    <link rel="stylesheet" href="../static/styles/style_cadastro.css">
     <title>Document</title>
 </head>
 <body>
-
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -19,13 +18,12 @@
     {% endwith %}
 
     <div class="login-container">
-        <h2>Login</h2>
-        <form action="/login" id="login" method="post">
+        <h2>Cadastrar</h2>
+        <form action="/cadastrarUsuario" id="login" method="post">
             <input type="text" name="nome" id="nome" placeholder="Usuário" required>
             <input type="password" name="senha" id="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
-            <form action="cadastro"><button>Cadastrar</button></form>
     </div>
 </body>
 </html>
