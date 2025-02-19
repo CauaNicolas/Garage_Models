@@ -1,4 +1,116 @@
-@import url(../styles/style_login.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.box {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+}
+
+.flash-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    text-align: center;
+    width: 50%;
+}
+
+.flash-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.success {
+    background-color: green;
+}
+
+.danger {
+    background-color: red;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.238);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    max-height: 300px;
+
+}
+.login-container h2 {
+    margin-bottom: 15px;
+}
+.login-container input {
+    width: 92%;
+    padding: 10px;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin:10px 0 10px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.login-container button:hover {
+    background: #218838;
+}
 h1 {
     color: white;
+}
+h3 {
+    padding: 5px;
+}
+.lista-container { 
+    background: rgba(255, 255, 255, 0.238);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    max-height: 500px;
+}
+.lista-usuarios {
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    overflow-y: scroll;
+    max-height: 285px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
 }

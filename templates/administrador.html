@@ -22,14 +22,39 @@
 
 
 
-    <div class="login-container">
-        <h1>ADMINISTRADOR</h1>
-        <h2>Cadastrar</h2>
-        <form action="/administrador" id="login" method="post">
-            <input type="text" name="nome" id="nome" placeholder="Usuário" required>
-            <input type="text" name="senha" id="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar Usuário</button>
-        </form>
+    <div class="box">
+        <div class="login-container">
+            <h1>ADMINISTRADOR</h1>
+            <h2>Cadastrar</h2>
+            <form action="/administrador" id="login" method="post">
+                <input type="text" name="nome" id="nome" placeholder="Usuário" required>
+                <input type="text" name="senha" id="senha" placeholder="Senha" required>
+                <button type="submit">Cadastrar Usuário</button>
+            </form>
+        </div>
+        
+        <div class="lista-container">
+            <h1>LISTAR USUÁRIOS</h1>
+            <h3>{{ usuarios | length }} Usuários<h3>
+            <div id="form_frente" class="lista-usuarios">
+                {% if usuarios %}
+                <ul>
+                    <form action="/excluirUsuario" method="post">
+                        {% for c in usuarios %}
+                            <input type="hidden" name="usuarioPexcluir" value="{{c}}">
+                            <li>NOME: {{ c['nome'] }}</li>
+                            <li>SENHA: {{ c['senha'] }}</li>
+                            <button type="submit">Excluir</button><br>
+                    </form>
+                        ------------------------------------------------
+                        
+                    {% endfor %}
+                </ul>                
+                {% else %}
+                <h1>Não existe usuarios cadastrados</h1>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </body>
 </html>

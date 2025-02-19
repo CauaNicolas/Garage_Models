@@ -1,62 +1,14 @@
 [
     {
         "nome": "caua",
-        "senha": "456"
-    },
-    {
-        "nome": "dudu",
         "senha": "123"
     },
     {
-        "nome": "joao",
-        "senha": "123"
+        "nome": "Renato",
+        "senha": "12345"
     },
     {
-        "nome": "ana",
-        "senha": "123"
-    },
-    {
-        "nome": "pedro",
-        "senha": "123"
-    },
-    {
-        "nome": "pedro123",
-        "senha": "123"
-    },
-    {
-        "nome": "lucas",
-        "senha": "123"
-    },
-    {
-        "nome": "bruno",
-        "senha": "123"
-    },
-    {
-        "nome": "mateus",
-        "senha": "123"
-    },
-    {
-        "nome": "matias",
-        "senha": "123"
-    },
-    {
-        "nome": "joaquim",
-        "senha": "123"
-    },
-    {
-        "nome": "laura",
-        "senha": "123"
-    },
-    {
-        "nome": "fdfsd",
-        "senha": "dsfs"
-    },
-    {
-        "nome": "ddada",
-        "senha": "dsada"
-    },
-    {
-        "nome": "sdada",
-        "senha": "dsada"
+        "nome": "Breno",
+        "senha": "1234"
     }
 ]

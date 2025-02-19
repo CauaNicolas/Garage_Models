@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request, flash, jsonify, redirect
 import json
 import os
+import ast
 
 logado = False
 
@@ -20,7 +21,9 @@ def cadastro():
 @app.route("/adm")
 def adm():
     if logado == True:
-        return render_template ("administrador.html")
+        with open ("usuarios.json") as usuariosTemp:
+            usuarios = json.load(usuariosTemp)
+        return render_template ("administrador.html",usuarios=usuarios)
     if logado == False:
         return render_template ("login.html")
     
@@ -105,6 +108,7 @@ def cadastrarUsuario():
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
+
     global logado
     logado = False
 
@@ -132,3 +136,19 @@ def login():
 
     return render_template("login.html")        
 
+@app.route("/excluirUsuario", methods=["POST"])
+def excluirUsuario():
+    global logado
+    logado = True
+    usuario = request.form.get("usuarioPexcluir")
+    usuarioDict = ast.literal_eval(usuario)
+    nome = usuarioDict["nome"]
+    with open ("usuarios.json") as usuariosTemp:
+        usuariosJson = json.load(usuariosTemp)
+        for c in usuariosJson:
+            if c == usuarioDict:
+                usuariosJson.remove(usuarioDict)
+                with open("usuarios.json", "w") as usuariosAexcluir:
+                    json.dump(usuariosJson, usuariosAexcluir, indent=4)
+    flash(F"{nome} EXCLUÍDO(A)", "success")
+    return render_template("administrador.html")
