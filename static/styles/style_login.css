@@ -7,8 +7,41 @@ body {
     background-color: #000000;
     margin: 0;
 }
-.flash_alerta {
-    color: red;
+
+.flash-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    text-align: center;
+    width: 50%;
+}
+
+.flash-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.success {
+    background-color: green;
+}
+
+.danger {
+    background-color: red;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
 }
 
 .login-container {

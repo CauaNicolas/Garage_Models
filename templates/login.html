@@ -9,14 +9,17 @@
 <body>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
+    {% if messages %}
+        <div class="flash-container">
             {% for category, message in messages %}
-                <div class="flash_alerta">
-                    <p>{{ message }}</p> 
-                </div>   
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
             {% endfor %}
-        {% endif %}
-    {% endwith %}
+        </div>
+    {% endif %}
+{% endwith %}
 
     <div class="login-container">
         <h2>Login</h2>

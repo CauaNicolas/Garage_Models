@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/style_cadastro.css">
+    <link rel="stylesheet" href="../static/styles/style_administrador.css">
     <title>Document</title>
 </head>
 <body>
@@ -20,12 +20,15 @@
     {% endif %}
 {% endwith %}
 
+
+
     <div class="login-container">
+        <h1>ADMINISTRADOR</h1>
         <h2>Cadastrar</h2>
-        <form action="/cadastrarUsuario" id="login" method="post">
+        <form action="/administrador" id="login" method="post">
             <input type="text" name="nome" id="nome" placeholder="Usuário" required>
-            <input type="password" name="senha" id="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
+            <input type="text" name="senha" id="senha" placeholder="Senha" required>
+            <button type="submit">Cadastrar Usuário</button>
         </form>
     </div>
 </body>
