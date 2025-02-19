@@ -176,6 +176,8 @@
             justify-content: center;
         }
         .item {
+            display: flex;
+            flex-direction: column;
             background: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -193,10 +195,12 @@
             margin: 10px 0;
             color: gray;
             cursor: pointer;
+            max-height: 10px;
         }
         .item h1 {
             font-size: 2rem;
             margin: 10px 0;
+            padding: 10px;
         }
         .item button {
             margin: auto;
@@ -208,6 +212,19 @@
             cursor: pointer;
         }
         .item button:hover {
+            background: rgb(168, 0, 0);
+        }
+        .botao {
+            position: relative;
+            margin: auto;
+            background: red;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .botao:hover {
             background: rgb(168, 0, 0);
         }
         .container {
