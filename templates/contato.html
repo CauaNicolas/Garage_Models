@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Comprador & Vendedor</title>
+    <link rel="stylesheet" href="../static/styles/contato.css">
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../static/images/Black and Red Modern Auto Dealership Logo Design.png" alt="logo">
+        <nav class="navbar"> 
+                <a href="/">Home</a>
+                <a href="#produtos">Carros</a>
+                <a href="#motos">Motos</a>
+                <a href="#">Contato</a>
+                <a href="/troca_devolucao">Trocas e Devoluções</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Fale com o Vendedor</h2>
+        <form action="#" method="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+</body>
+</html>

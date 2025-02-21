@@ -38,7 +38,7 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: #bb0000;
-            /*position: fixed;*/
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -62,6 +62,8 @@
             cursor: pointer;
             font-size: 2rem;
             margin-left: 2rem;
+            display: inline-block;
+            vertical-align: middle;
         }
         .header .icons div:hover {
             color: red;
@@ -102,7 +104,7 @@
             align-items: center;
             justify-content: center;
             gap: 90px;
-            background: linear-gradient(to bottom, #000000, #5c5c5c, black);
+            background: linear-gradient(to bottom, #000000, #393535, black);
             padding: 30px;
             border-radius: 10px;
         }
@@ -233,6 +235,14 @@
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .icon_login {
+            display: flex;
+            font-weight: 500;
+            font-size: .5em;
+        }
+        .bem_vindo {
+            font-size: .8em;
         }
         footer {
             background: #333;

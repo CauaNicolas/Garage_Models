@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, flash, jsonify, redirect, url_for # Importando as classes
+from flask import render_template, request, flash, jsonify, redirect, url_for, session # Importando as classes
 
 import json
 import os
@@ -84,6 +84,15 @@ def home():
 @app.route("/loja")
 def loja():
     return "Hello, loja"
+
+@app.route("/contato")
+def contato():
+    return render_template("contato.html")
+
+@app.route("/troca_devolucao")
+def troca_devolucao():
+    return render_template ("troca_devolucao.html")
+
 
 @app.route("/compra")
 def compra():
@@ -205,7 +214,8 @@ def login():
         usuarios = carregar_usuarios()
         for usuario in usuarios:
             if usuario.autenticar(nome, senha):
-                return render_template("index.html")
+                session["nome"] = usuario.nome
+                return render_template("index.html", nome=session["nome"])
 
         # Se chegar aqui, o usuário errou
         flash("Usuário ou senha incorretos", "danger")

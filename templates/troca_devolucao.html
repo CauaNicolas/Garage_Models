@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca e Devolução</title>
+    <link rel="stylesheet" href="../static/styles/troca_devolucao.css">
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../static/images/Black and Red Modern Auto Dealership Logo Design.png" alt="logo">
+        <nav class="navbar"> 
+                <a href="/">Home</a>
+                <a href="#produtos">Carros</a>
+                <a href="#motos">Motos</a>
+                <a href="/contato">Contato</a>
+                <a href="#">Trocas e Devoluções</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Solicitação de Troca/Devolução</h2>
+        <form action="#" method="POST">
+            <label for="order">Número do Pedido:</label>
+            <input type="text" id="order" name="order" required>
+            
+            <label for="reason">Motivo:</label>
+            <select id="reason" name="reason" required>
+                <option value="defeito">Produto com Defeito</option>
+                <option value="erro">Recebi o Produto Errado</option>
+                <option value="insatisfacao">Não estou Satisfeito</option>
+            </select>
+            
+            <label for="message">Detalhes:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+    </div>
+</body>
+</html>
