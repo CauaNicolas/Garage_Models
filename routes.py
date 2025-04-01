@@ -26,8 +26,8 @@ class Administrador(Usuario):
 
 def carregar_usuarios():
     with open("usuarios.json") as usuariosTemp:
-        usuarios_data = json.load(usuariosTemp)
-    return [Usuario(u["nome"], u["senha"]) for u in usuarios_data]
+        usuarios_data = json.load(usuariosTemp) #A função carrega os dados do JSON e cria objetos da classe Usuario
+    return [Usuario(u["nome"], u["senha"]) for u in usuarios_data] #retornando uma lista desses objetos.
 
 
 class Pessoa:
@@ -41,33 +41,30 @@ class Pessoa:
     def get_senha(self):
         return self.__senha
 
-    def to_dict(self):
-        """ Retorna o usuário como dicionário para ser salvo no JSON """
+    def to_dict(self): # Retorna o usuário como dicionário para ser salvo no JSON
         return {"nome": self.__nome, "senha": self.__senha}
     
 class GerenciadorUsuarios:
-    ARQUIVO_JSON = "usuarios.json"
+    ARQUIVO_JSON = "usuarios.json" #Define o nome do arquivo onde os usuários serão armazenados.
 
     @staticmethod
-    def carregar_usuarios():
-        """Carrega os usuários do JSON, retorna lista vazia se o arquivo não existir ou estiver inválido."""
-        if os.path.exists(GerenciadorUsuarios.ARQUIVO_JSON):
+    def carregar_usuarios(): #Carrega os usuários do JSON, retorna lista vazia se o arquivo não existir ou estiver inválido.
+        if os.path.exists(GerenciadorUsuarios.ARQUIVO_JSON): #Verifica se o arquivo JSON existe
             try:
-                with open(GerenciadorUsuarios.ARQUIVO_JSON, "r", encoding="utf-8") as file:
+                with open(GerenciadorUsuarios.ARQUIVO_JSON, "r", encoding="utf-8") as file: #tenta abrir e carregar os dados.
                     return json.load(file)
             except json.JSONDecodeError:
                 return []  # Retorna lista vazia se o JSON estiver corrompido
         return []
 
     @staticmethod
-    def salvar_usuario(usuario):
-        """Adiciona um novo usuário e salva no JSON"""
+    def salvar_usuario(usuario): #Adiciona um novo usuário e salva no JSON
         usuarios = GerenciadorUsuarios.carregar_usuarios()
 
         # Verifica se o usuário já existe
         for u in usuarios:
             if u["nome"] == usuario.get_nome():
-                return False  # Usuário já cadastrado
+                return False  # Usuário já cadastrado (duplicação)
 
         # Adiciona novo usuário e salva
         usuarios.append(usuario.to_dict())
@@ -135,7 +132,7 @@ def adm():
     if logado == True:
         with open ("usuarios.json") as usuariosTemp:
             usuarios = json.load(usuariosTemp)
-        return render_template ("administrador.html",usuarios=usuarios)
+        return render_template ("administrador.html",usuarios=usuarios) #Passa a variável usuarios para ser usada na página.
     if logado == False:
         return render_template ("login.html")
     
@@ -188,7 +185,7 @@ def cadastrarUsuario():
 
     novo_usuario = Pessoa(nome, senha)
 
-    if GerenciadorUsuarios.salvar_usuario(novo_usuario):
+    if GerenciadorUsuarios.salvar_usuario(novo_usuario): #cadastrar usuário 
         flash("Usuário cadastrado com sucesso!", "success")
         return redirect(url_for('login'))
     else:
@@ -227,15 +224,15 @@ def login():
 def excluirUsuario():
     global logado
     logado = True
-    usuario = request.form.get("usuarioPexcluir")
-    usuarioDict = ast.literal_eval(usuario)
-    nome = usuarioDict["nome"]
+    usuario = request.form.get("usuarioPexcluir") #Pega o usuário a ser excluído a partir do formulário
+    usuarioDict = ast.literal_eval(usuario) #converte a string em um dicionário Python.
+    nome = usuarioDict["nome"] #Extrai o nome do usuário que será excluído.
     with open ("usuarios.json") as usuariosTemp:
         usuariosJson = json.load(usuariosTemp)
         for c in usuariosJson:
             if c == usuarioDict:
-                usuariosJson.remove(usuarioDict)
-                with open("usuarios.json", "w") as usuariosAexcluir:
-                    json.dump(usuariosJson, usuariosAexcluir, indent=4)
+                usuariosJson.remove(usuarioDict) #remove da lista caso responda a usuarioDict
+                with open("usuarios.json", "w") as usuariosAexcluir:  
+                    json.dump(usuariosJson, usuariosAexcluir, indent=4) #Salva a lista atualizada de usuários
     flash(F"{nome} EXCLUÍDO(A)", "success")
     return render_template("administrador.html")

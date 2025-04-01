@@ -1,13 +1,5 @@
 [
     {
-        "nome": "caua",
-        "senha": "123"
-    },
-    {
-        "nome": "Renato",
-        "senha": "1234"
-    },
-    {
         "nome": "Gabriel",
         "senha": "12345"
     },
@@ -22,5 +14,17 @@
     {
         "nome": "Thomas",
         "senha": "ABC123"
+    },
+    {
+        "nome": "Henrique",
+        "senha": "123"
+    },
+    {
+        "nome": "Nicolas",
+        "senha": "123"
+    },
+    {
+        "nome": "Breno",
+        "senha": "123"
     }
 ]
