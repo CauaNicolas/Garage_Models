@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Models - Login</title>
+    <!-- Fonte Moderna -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <img class="logo" src="/static/images/Black and Red Modern Auto Dealership Logo Design.png" alt="logo">
+    <!-- Font Awesome para os Ícones -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="../static/styles/style_login.css">
-    <title>Document</title>
 </head>
 <body>
 
+    <!-- Sistema de Notificações Moderno (Flashed Messages) -->
     {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <div class="flash-container">
-            {% for category, message in messages %}
-                <div class="flash-message {{ category }}">
-                    {{ message }}
-                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endwith %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        <i class="fas {% if category == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}"></i>
+                        <span class="msg-text">{{ message }}</span>
+                        <span class="close-btn" onclick="this.parentElement.style.opacity='0'; setTimeout(() => this.parentElement.style.display='none', 300);">&times;</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="/login" id="login" method="post">
-            <input type="text" name="nome" id="nome" placeholder="Usuário" required>
-            <input type="password" name="senha" id="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-            <form action="cadastro"><button>Cadastrar</button></form>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-header">
+                <!-- Ícone decorativo ou você pode substituir por uma tag <img> com sua logo miniatura -->
+                <img class="brand-icon" src="/static/images/Black and Red Modern Auto Dealership Logo Design.png" alt="logo">
+                <h2>Garage Models</h2>
+                <p>Acesse sua conta para gerenciar sua coleção</p>
+            </div>
+
+            <form action="/login" id="login" method="post" class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" name="nome" id="nome" placeholder="Usuário" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Não tem uma conta?</p>
+                <a href="/cadastro" class="btn btn-secondary">Criar Conta</a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
