@@ -251,3 +251,59 @@
             padding: 1rem 0;
             margin-top: 20px;
         }
+        /* ==============================================
+   SEÇÃO DE FILTRAGEM E ORDENAÇÃO 
+================================================= */
+.filtro-container {
+    max-width: 1200px;
+    margin: 3rem auto 1rem auto;
+    padding: 0 7%;
+    display: flex;
+    justify-content: center; /* Alinha o filtro à direita para um visual clean */
+}
+
+.filtro-form {
+    background: #111113;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid #222225;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.filtro-grupo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.filtro-grupo label {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.filtro-grupo label i {
+    color: #ff0000; /* Ícone vermelho combinando com a Garage Models */
+    margin-right: 0.5rem;
+}
+
+.filtro-grupo select {
+    background: #000000;
+    color: #ffffff;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #333338;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao focar ou passar o mouse no campo de seleção */
+.filtro-grupo select:hover, 
+.filtro-grupo select:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+

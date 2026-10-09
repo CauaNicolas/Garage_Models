@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/style_compra.css">
     <title>Garage Models</title>
+    <!-- Fonte Moderna -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para os Ícones -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="../static/styles/style_compra.css">
 </head>
-
 <body>    
     <header class="header">
         <img class="logo" src="../static/images/Black and Red Modern Auto Dealership Logo Design.png" alt="logo">
         <nav class="navbar"> 
-                <a href="/">Home</a>
-                <a href="#produtos">Carros</a>
-                <a href="#motos">Motos</a>
-                <a href="#contato">Contato</a>
-                <a href="#trocas_devoluções">Trocas e Devoluções</a>
+            <a href="/">Home</a>
+            <a href="#produtos">Carros</a>
+            <a href="#motos">Motos</a>
+            <a href="#contato">Contato</a>
+            <a href="#trocas_devoluções">Trocas e Devoluções</a>
         </nav>
         <div class="icons">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
+            <button id="search-btn" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+            <button id="cart-btn" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i></button>
+            <button id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
     
-    <div class="flex row center-x center-y container">
-        <div class="image">
+    <main class="product-container">
+        <div class="product-image">
             <img src="../static/images/Nissan Skyline GT-R R34.png" alt="Nissan Skyline GT-R R34">
         </div>
         
-        <div class="flex column center-x infos">
-            <h1>Nissan Skyline GT-R R34 </h1>
-            <h2>Nissan Skyline - 1999</h2>
+        <div class="product-infos">
+            <span class="badge-tag">Coleção Oficial</span>
+            <h1>Nissan Skyline GT-R R34</h1>
+            <h2>Nissan Skyline — 1999</h2>
             <p class="price">R$ 99,90</p>
-            <p class="description">
-                O Nissan Skyline GT-R R34 é um carro muito bala, um dos favoritos para os amantes de carros japoneses
-            </p>
-            <p>
-                Relembre as estradas percorridas e as experiências vividas com esta coleção oficial dos carros Japoneses.
-            </p>
             
-            <p><strong>Escala colecionador:</strong> 1:43</p>
+            <div class="description">
+                <p>O Nissan Skyline GT-R R34 é um carro sensacional, um dos favoritos para os amantes de modelos japoneses.</p>
+                <p>Relembre as estradas percorridas e as experiências vividas com esta coleção oficial dos carros Japoneses.</p>
+            </div>
+            
+            <p class="spec"><strong>Escala colecionador:</strong> 1:43</p>
 
-            <button class="indispon">🚫 Produto indisponível</button>
-            <button class="notificar">🔔 AVISE-ME</button>
+            <div class="actions">
+                <button class="btn indispon" disabled><i class="fas fa-ban"></i> Produto indisponível</button>
+                <button class="btn notificar"><i class="fas fa-bell"></i> AVISE-ME QUANDO CHEGAR</button>
+            </div>
 
-            <div class="links">
-                <a href="#">🔎 Mais informações</a>
-                <a href="#">🚗 Confira outros itens desta coleção</a>
-                <a href="#">⚠️ Alertas sobre novos produtos</a>
+            <div class="product-links">
+                <a href="#"><i class="fas fa-search-plus"></i> Mais informações</a>
+                <a href="#"><i class="fas fa-car"></i> Confira outros itens desta coleção</a>
+                <a href="#"><i class="fas fa-exclamation-circle"></i> Alertas sobre novos produtos</a>
             </div>
         </div>
-    </div>
-
+    </main>
 </body>
 </html>

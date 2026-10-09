@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Models - Moto BMW R1250 GS 2022</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="../static/styles/style_compra.css">
-    <title>Garage Models</title>
 </head>
 
 <body>    
@@ -18,40 +22,45 @@
                 <a href="#trocas_devoluções">Trocas e Devoluções</a>
         </nav>
         <div class="icons">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
+            <button id="search-btn" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+            <button id="cart-btn" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i></button>
+            <button id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
     
-    <div class="flex row center-x center-y container">
-        <div class="image">
-            <img src="../static/images/Moto_BMW_R1250_GS.png" alt="Nissan Skyline GT-R R34">
+    <main class="product-container">
+        <div class="product-image">
+            <img src="../static/images/Moto_BMW_R1250_GS.png" alt="Moto BMW R1250 GS 2022">
         </div>
         
-        <div class="flex column center-x infos">
+        <div class="product-infos">
+            <span class="badge-tag">Coleção Oficial</span>
             <h1>Moto BMW R1250 GS 2022</h1>
             <h2>Moto BMW R1250 GS 2022</h2>
             <p class="price">R$ 79,90</p>
-            <p class="description">
+            <div class="description">
+                <p>
                 A BMW Motorrad anunciou descontos e condições especiais para algumas de suas motos e a maior redução de preço nessa promoção foi justamente a R 1250 GS. Tabelada em R$ 112.500, a moto está saindo por R$ 99.990 durante o período da promoção, que não foi especificado. É uma redução de R$ 12.600.
-            </p>
-            <p>
+                </p>
+                <p>
                 Relembre as estradas percorridas e as experiências vividas com esta coleção oficial dos carros Japoneses.
-            </p>
+                </p>
             
-            <p><strong>Escala colecionador:</strong> 1:43</p>
+            </div>
+            <p class="spec"><strong>Escala colecionador:</strong> 1:43</p>
 
-            <button class="indispon">🚫 Produto indisponível</button>
-            <button class="notificar">🔔 AVISE-ME</button>
+            <div class="actions">
+                <button class="btn indispon" disabled><i class="fas fa-ban"></i> Produto indisponível</button>
+                <button class="btn notificar"><i class="fas fa-bell"></i> AVISE-ME QUANDO CHEGAR</button>
+            </div>
 
-            <div class="links">
-                <a href="#">🔎 Mais informações</a>
-                <a href="#">🚗 Confira outros itens desta coleção</a>
-                <a href="#">⚠️ Alertas sobre novos produtos</a>
+            <div class="product-links">
+                <a href="#"><i class="fas fa-search-plus"></i> Mais informações</a>
+                <a href="#"><i class="fas fa-car"></i> Confira outros itens desta coleção</a>
+                <a href="#"><i class="fas fa-exclamation-circle"></i> Alertas sobre novos produtos</a>
             </div>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>

@@ -38,9 +38,6 @@
         </div>
     </header>
 
-
-
-
     <div class="containers" id="home">
         <div class="image-section">
           <img src="/static/images/rs6-sem_fundo.png" alt="Carro miniatura">
@@ -52,6 +49,19 @@
         </div>
       </div>
 
+    <section class="filtro-container">
+        <form method="GET" action="/" class="filtro-form">
+            <div class="filtro-grupo">
+                <label for="ordenacao"><i class="fas fa-sort-amount-down"></i> Ordenar por:</label>
+                <select name="ordem" id="ordenacao" onchange="this.form.submit()">
+                    <option value="relevancia">Relevância / Destaques</option>
+                    <option value="preco_crescente">Menor Preço</option>
+                    <option value="preco_decrescente">Maior Preço</option>
+                    <option value="avaliacao">Melhor Avaliação</option>
+                </select>
+            </div>
+        </form>
+    </section>
 
 
 
