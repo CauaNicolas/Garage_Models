@@ -44,13 +44,8 @@ python app.py
 ### 5. Acessar no navegador
 Abra o seu navegador e acesse o endereço local gerado:
 ```text
-(http://127.0.0.1:5000)
+http://127.0.0.1:5000
 ```
-
-## 📝 Próximos Passos (Opcional)
-* [ ] Adicionar renderização de páginas HTML com Jinja2 (`templates/`).
-* [ ] Criar novas rotas e endpoints de API.
-* [ ] Conectar com um banco de dados (SQLite/PostgreSQL).
 
 ## 📄 Licença
 
