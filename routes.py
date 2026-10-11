@@ -152,6 +152,26 @@ def compra7():
 def compra8():
     return render_template("compra8.html")
 
+@app.route("/compra9")
+def compra9():
+    return render_template("compra9.html")
+
+@app.route("/compra/<int:id_produto>")
+def detalhe_compra(id_produto):
+    # Procura o produto correspondente dentro do catálogo usando o ID da URL
+    produto_encontrado = None
+    for p in MINIATURAS_BD:
+        if p["id"] == id_produto:
+            produto_encontrado = p
+            break
+            
+    if produto_encontrado is None:
+        return "Produto não encontrado", 404
+        
+    # Renderiza um ÚNICO template passando os dados do produto encontrado
+    # Você pode renomear um dos seus arquivos de compra para "detalhe_produto.html"
+    return render_template("detalhe_produto.html", produto=produto_encontrado)
+
 @app.route("/cadastro")
 def cadastro():
     return render_template("cadastro.html")

@@ -71,7 +71,7 @@
     <div class="item-box">
         {% for produto in produtos %}
             <!-- Filtra para mostrar apenas os carros (IDs de 1 a 4) -->
-            {% if produto.id <= 4 %}
+            {% if produto.tipo == "carro" %}
             <div class="item">
                 <!-- Busca o caminho da imagem que você já cadastrou no seu app.py (se adicionou a chave lá) -->
                 <!-- Se preferir manter fixo por ID enquanto testa: src="/static/images/{{ produto.nome }}.png" também funciona se os nomes dos arquivos forem iguais aos nomes dos produtos -->
@@ -98,7 +98,7 @@
     <div class="item-box">
         {% for produto in produtos %}
             <!-- Filtra para mostrar apenas as motos (IDs de 5 a 8) -->
-            {% if produto.id >= 5 %}
+            {% if produto.tipo == "moto" %}
             <div class="item">
                 <img src="/static/images/{{ produto.imagem }}" alt="{{ produto.nome }}">
                 <h3>{{ produto.nome }}</h3>
