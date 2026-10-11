@@ -54,73 +54,61 @@
             <div class="filtro-grupo">
                 <label for="ordenacao"><i class="fas fa-sort-amount-down"></i> Ordenar por:</label>
                 <select name="ordem" id="ordenacao" onchange="this.form.submit()">
-                    <option value="relevancia">Relevância / Destaques</option>
-                    <option value="preco_crescente">Menor Preço</option>
-                    <option value="preco_decrescente">Maior Preço</option>
-                    <option value="avaliacao">Melhor Avaliação</option>
+                    <option value="relevancia" {% if ordem_atual == 'relevancia' %}selected{% endif %}>Relevância / Destaques</option>
+                    <option value="preco_crescente" {% if ordem_atual == 'preco_crescente' %}selected{% endif %}>Menor Preço</option>
+                    <option value="preco_decrescente" {% if ordem_atual == 'preco_decrescente' %}selected{% endif %}>Maior Preço</option>
+                    <option value="avaliacao" {% if ordem_atual == 'avaliacao' %}selected{% endif %}>Melhor Avaliação</option>
                 </select>
             </div>
         </form>
     </section>
 
 
-
     <main class="conteudo" id="carros">
-        <h2 class="subtitulo">Carros</h2>
-        <p class="escala">Miniaturas de carros em escala 1:32</p>
-            <div class="item-box">
-                <div class="item">
-                    <img src="/static/images/Nissan Skyline GT-R R34.png" alt="Produto 1">
-                    <h3>Nissan Skyline GT-R R34 2000</h3>
-                    <h1>R$99,90</h1>
+    <h2 class="subtitulo">Carros</h2>
+    <p class="escala">Miniaturas de carros em escala 1:32</p>
+    
+    <div class="item-box">
+        {% for produto in produtos %}
+            <!-- Filtra para mostrar apenas os carros (IDs de 1 a 4) -->
+            {% if produto.id <= 4 %}
+            <div class="item">
+                <!-- Busca o caminho da imagem que você já cadastrou no seu app.py (se adicionou a chave lá) -->
+                <!-- Se preferir manter fixo por ID enquanto testa: src="/static/images/{{ produto.nome }}.png" também funciona se os nomes dos arquivos forem iguais aos nomes dos produtos -->
+                <img src="/static/images/{{ produto.imagem }}" alt="{{ produto.nome }}">
+                <h3>{{ produto.nome }}</h3>
+                <h1>R${{ "%.2f"|format(produto.preco)|replace('.', ',') }}</h1>
+                
+                {% if produto.id == 1 %}
                     <a href="/compra" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/BMW_M5_F90-removebg-preview.png" alt="Produto 2">
-                    <h3>BMW M5 F90 2022</h3>
-                    <h1>R$109,90</h1>
-                    <a href="/compra2" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/Honda_Acura_NSX_2018-removebg-preview.png" alt="Produto 3">
-                    <h3>Honda Acura NSX 2018</h3>
-                    <h1>R$123,45</h1>
-                    <a href="/compra3" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/Porche_911_GT3_Touring_2022-removebg-preview.png" alt="Produto 4">
-                    <h3>Porsche 911 GT3 Touring 2022</h3>
-                    <h1>R$129,90</h1>
-                    <a href="/compra4" class="botao" target="_blank">Comprar</a>
-    </main>
-    <main class="conteudo" id="motos">
-        <h2 class="subtitulo">Motos</h2>
-        <p class="escala">Miniaturas de carros em escala 1:12</p>
-            <div class="item-box">
-                <div class="item">
-                    <img src="/static/images/Moto_BMW_R1250_GS.png" alt="Produto 1">
-                    <h3>Moto BMW R1250 GS 2022</h3>
-                    <h1>R$79,90</h1>
-                    <a href="/compra5" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/Moto_BMW_S1000RR.png" alt="Produto 2">
-                    <h3>Moto BMW S1000RR 2018</h3>
-                    <h1>R$69,90</h1>
-                    <a href="/compra6" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/Moto_Honda_Hornet.png" alt="Produto 3">
-                    <h3>Moto Honda Hornet 2012</h3>
-                    <h1>R$89,90</h1>
-                    <a href="/compra7" class="botao" target="_blank">Comprar</a>
-                </div>
-                <div class="item">
-                    <img src="/static/images/Moto_Yamaha_YZF_R1.png" alt="Produto 4">
-                    <h3>Moto Yamaha YZF R1 2013</h3>
-                    <h1>R$149,90</h1>
-                    <a href="/compra8" class="botao" target="_blank">Comprar</a>
-    </main>
+                {% else %}
+                    <a href="/compra{{ produto.id }}" class="botao" target="_blank">Comprar</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div> <!-- Fechamento correto da item-box -->
+</main>
+
+<!-- ================= SEÇÃO DE MOTOS ================= -->
+<main class="conteudo" id="motos">
+    <h2 class="subtitulo">Motos</h2>
+    <p class="escala">Miniaturas de motos em escala 1:12</p>
+    
+    <div class="item-box">
+        {% for produto in produtos %}
+            <!-- Filtra para mostrar apenas as motos (IDs de 5 a 8) -->
+            {% if produto.id >= 5 %}
+            <div class="item">
+                <img src="/static/images/{{ produto.imagem }}" alt="{{ produto.nome }}">
+                <h3>{{ produto.nome }}</h3>
+                <h1>R${{ "%.2f"|format(produto.preco)|replace('.', ',') }}</h1>
+                <a href="/compra{{ produto.id }}" class="botao" target="_blank">Comprar</a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div> <!-- Fechamento correto da item-box -->
+</main>
 
     <footer>
         <p>&copy; 2024 Garage Models. Todos os direitos reservados.</p>
