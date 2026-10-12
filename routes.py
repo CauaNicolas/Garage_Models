@@ -119,43 +119,6 @@ def contato():
 def troca_devolucao():
     return render_template ("troca_devolucao.html")
 
-
-@app.route("/compra")
-def compra():
-    return render_template("compra.html")
-
-@app.route("/compra2")
-def compra2():
-    return render_template("compra2.html")
-
-@app.route("/compra3")
-def compra3():
-    return render_template("compra3.html")
-
-@app.route("/compra4")
-def compra4():
-    return render_template("compra4.html")
-
-@app.route("/compra5")
-def compra5():
-    return render_template("compra5.html")
-
-@app.route("/compra6")
-def compra6():
-    return render_template("compra6.html")
-
-@app.route("/compra7")
-def compra7():
-    return render_template("compra7.html")
-
-@app.route("/compra8")
-def compra8():
-    return render_template("compra8.html")
-
-@app.route("/compra9")
-def compra9():
-    return render_template("compra9.html")
-
 @app.route("/compra/<int:id_produto>")
 def detalhe_compra(id_produto):
     # Procura o produto correspondente dentro do catálogo usando o ID da URL

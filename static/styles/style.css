@@ -306,4 +306,77 @@
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
+/* Container que segura as miniaturas (a prateleira de carros ou motos) */
+.item-box {
+    display: grid;
+    /* Divide o espaço em 4 colunas perfeitamente iguais */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Cria um espaçamento de 20px (2rem) entre as caixinhas */
+    gap: 3rem; 
+    padding: 2rem 0;
+    background-color: black;
+    width: 100%;
+    max-width: 1000px; /* Limita o tamanho máximo para as caixas não esticarem demais */
+    margin: 0 auto; 
+}
+
+/* Cada caixinha branca individual do produto */
+.item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    width: 100%;
+}
+
+/* Garante que as imagens não estourem o tamanho da caixinha branca */
+.item img {
+    height: 15rem;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilização básica dos textos e do botão dentro do card */
+.item h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.item h1 {
+    font-size: 2.2rem;
+    color: #bb0000;
+    margin-bottom: 1.5rem;
+}
+
+.item .botao {
+    display: inline-block;
+    padding: .8rem 2.5rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #bb0000;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.item .botao:hover {
+    background: red;
+    letter-spacing: .1rem;
+}
+
+/* Títulos das seções (Carros / Motos) */
+.conteudo {
+    padding: 4rem 7% 0 7%;
+}
+.escala {
+    font-size: 1.4rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
 
