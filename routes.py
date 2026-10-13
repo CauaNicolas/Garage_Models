@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request, flash, jsonify, redirect, url_for, session # Importando as classes
 from app import app, MINIATURAS_BD 
 from ordenacao_insertion import insertion_sort_miniaturas
+from ordenacao_merge import merge_sort_miniaturas
 
 import json
 import os
@@ -84,11 +85,15 @@ def home():
     # 2. Cria uma cópia das suas 8 miniaturas cadastradas no app.py
     lista_produtos = list(MINIATURAS_BD)
     
-    # 3. Mapeia os "values" do seu HTML para o seu Insertion Sort bruto
+    # 3. Mapeia os "values" do seu HTML para o seu Insertion Sort bruto e Merge Sort
     if ordem == "preco_crescente":
         insertion_sort_miniaturas(lista_produtos, sentido="menor")
     elif ordem == "preco_decrescente":
         insertion_sort_miniaturas(lista_produtos, sentido="maior")
+    elif ordem == "alfabetica_az":
+        merge_sort_miniaturas(lista_produtos, sentido="crescente")
+    elif ordem == "alfabetica_za":
+        merge_sort_miniaturas(lista_produtos, sentido="decrescente")
     # (Se for 'relevancia' ou 'avaliacao', ele simplesmente mantém a ordem padrão do array)
 
     # 4. Envia os produtos já ordenados e a ordem atual para a Home
@@ -102,11 +107,15 @@ def loja():
     # 2. Cria uma cópia da lista original para não misturar os dados fixos do app.py
     lista_produtos = list(MINIATURAS_BD)
     
-    # 3. Aplica o seu Insertion Sort de acordo com o clique do usuário
+    # 3. Aplica o seu Insertion Sort ou Merge Sort de acordo com o clique do usuário
     if ordem == "menor_preco":
         insertion_sort_miniaturas(lista_produtos, sentido="menor")
     elif ordem == "maior_preco":
         insertion_sort_miniaturas(lista_produtos, sentido="maior")
+    elif ordem == "alfabetica_az":
+        merge_sort_miniaturas(lista_produtos, sentido="crescente")
+    elif ordem == "alfabetica_za":
+        merge_sort_miniaturas(lista_produtos, sentido="decrescente")
         
     # 4. Envia os produtos ordenados para o seu template HTML
     return render_template("loja.html", produtos=lista_produtos, ordem_atual=ordem)
